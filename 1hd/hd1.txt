@@ -1,0 +1,35 @@
+
+1. It would be best to use triangles since we only have to code
+   for one shape. We can for example approximate the sphere by
+   using longitude and latitude by for example:
+      a. Start at the bottom, draw point.
+      b. Move up n degrees latitude, then
+         travelling fixed length along the
+         circumference of the sphere.
+      c. Repeat b. until at top.
+   With this method we then draw an edge between the closest two
+   vertices of the graph while never crossing two lines (wrt surface).
+
+   Then we have a sphere approximation with only triangles.
+
+2. Bandwidth_HD = 3 * 1920 * 1080 * 60 = 3.7 * 10^8
+   Bandwidth_UHD = 3 * 3840 * 2160 * 60 = 1.4 * 10^9
+
+3. Nvidia GeForce GTX 1070 Ti
+   
+   Mem_bandwidth     = 256 GB/s
+   Pixel_fill_rate   = 92.3 GP/s
+   Bus_int_bandwidth = 15.8 GB/s
+
+   Last depends on what framerate is acceptable.
+   Assume 60Hz we have:
+      92.3 GP/s
+    ->1.53 GP at 60Hz
+    ->Aspect ration 16:9 gives 16*9 'zones'
+    ->10682 pixels per 'zone'
+    ->each 'zone' is 103x103 in dimension.
+
+    ->Max resolution supported is then roughly ~1600x900
+
+
+
